@@ -1,0 +1,76 @@
+﻿<Window x:Class="Diary.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Diary"
+        mc:Ignorable="d"
+        Title="Бедарева Софья, Сторожева Анна, 9ИС-435, ПР №5: Текстовые компоненты WPF"
+        Height="520" Width="820"
+        WindowStartupLocation="CenterScreen">
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Шапка -->
+        <TextBlock Grid.Row="0" Grid.ColumnSpan="3"
+                   x:Name="TextBlock_Header"
+                   TextWrapping="Wrap"
+                   FontSize="14" FontWeight="Bold"
+                   Margin="0,0,0,10"
+                   Text="Бедарева Софья, Сторожева Анна — группа 9ИС-435. ПР №5: Текстовые компоненты WPF. Демонстрация работы с текстовыми компонентами."/>
+
+        <!-- Подпись поля ввода -->
+        <Label Grid.Row="1" Grid.Column="0"
+               x:Name="Label_Note"
+               Content="Ваша заметка:"/>
+
+        <!-- TextBox -->
+        <TextBox Grid.Row="2" Grid.Column="0"
+                 x:Name="TextBox_Note"
+                 AcceptsReturn="True"
+                 TextWrapping="Wrap"
+                 VerticalScrollBarVisibility="Auto"
+                 VerticalAlignment="Stretch"
+                 Margin="0,0,10,10"/>
+
+        <!-- Панель кнопок -->
+        <StackPanel Grid.Row="1" Grid.RowSpan="2" Grid.Column="1"
+                    VerticalAlignment="Top" Margin="0,26,10,0">
+            <Button x:Name="Button_add" Content="Добавить заметку" Width="170" Height="32" Margin="0,0,0,8" Click="Button_add_Click"/>
+            <Button x:Name="Button_show" Content="Показать все заметки" Width="170" Height="32" Margin="0,0,0,8" Click="Button_show_Click"/>
+            <Button x:Name="Button_clear" Content="Очистить поле ввода" Width="170" Height="32" Margin="0,0,0,8" Click="Button_clear_Click"/>
+            <Button x:Name="Button_delete" Content="Удалить все заметки" Width="170" Height="32" Margin="0,0,0,8" Click="Button_delete_Click"/>
+            <Button x:Name="Button_exit" Content="Выход" Width="170" Height="32" Click="Button_exit_Click"/>
+        </StackPanel>
+
+        <!-- Список заметок -->
+        <Label Grid.Row="1" Grid.Column="2" Content="Сохранённые заметки:"/>
+        <ListBox Grid.Row="2" Grid.Column="2"
+                 x:Name="ListBox_Notes"
+                 Margin="0,0,0,10"
+                 VerticalAlignment="Stretch"/>
+
+        <!-- Счётчик -->
+        <TextBlock Grid.Row="3" Grid.ColumnSpan="3"
+                   x:Name="TextBlock_Status"
+                   Text="Заметок: 0"
+                   HorizontalAlignment="Right"
+                   Margin="0,0,0,0"/>
+    </Grid>
+</Window>
+
+
+
+
+
+
